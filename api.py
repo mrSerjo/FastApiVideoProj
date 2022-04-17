@@ -23,3 +23,15 @@ async def upload_image(files: List[UploadFile] = File(...)):
 
 
     return {"file_name": "Good"}
+
+
+@video_router.post("/info")
+async def info_set(info: UploadVideo):
+    return info
+
+
+@video_router.get("/info")
+async def info_get():
+    title = 'Test'
+    desc = 'Description'
+    return UploadVideo(title=title, description=desc)
